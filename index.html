@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Six7 Industries Support</title>
+  <meta
+    name="description"
+    content="Official support page for Six7 Industries apps. Contact support, ask questions, and get help."
+  />
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #141922;
+      --soft: #1b2230;
+      --text: #f4f7fb;
+      --muted: #a8b3c7;
+      --accent: #7dd3fc;
+      --accent2: #60a5fa;
+      --border: rgba(255,255,255,0.08);
+      --success: #86efac;
+      --danger: #fca5a5;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top, rgba(96,165,250,0.12), transparent 35%),
+        linear-gradient(180deg, #0a0c11 0%, #0b0d12 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    p, li, label {
+      color: var(--muted);
+    }
+
+    .support-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      padding: 12px 16px;
+      min-height: 46px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #07111d;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(125,211,252,0.7);
+      box-shadow: 0 0 0 4px rgba(125,211,252,0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .faq {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.025);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      margin: 12px 0 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 38px 0 20px;
+      font-size: 0.95rem;
+    }
+
+    .status {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+    }
+
+    .status.success {
+      display: block;
+      background: rgba(134,239,172,0.12);
+      color: var(--success);
+      border: 1px solid rgba(134,239,172,0.28);
+    }
+
+    .status.error {
+      display: block;
+      background: rgba(252,165,165,0.12);
+      color: var(--danger);
+      border: 1px solid rgba(252,165,165,0.28);
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">Six7 Industries • App Support</div>
+      <h1>Need help?</h1>
+      <p class="subtitle">
+        Welcome to official support for Six7 Industries apps. Send a question,
+        report a bug, or ask for help and we’ll get back to you as soon as possible.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Contact Support</h2>
+        <p>
+          Use the form below to send a message. You can also contact us directly by email.
+        </p>
+
+        <!--
+          IMPORTANT:
+          Replace the action URL below with your Formspree endpoint.
+          Example: https://formspree.io/f/xblyyzzz
+
+          If you do not want Formspree yet, leave action="#" and the fallback mailto script will open email instead.
+        -->
+        <form id="support-form" action="https://formspree.io/f/xojkrllw" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field">
+            <label for="app">App</label>
+            <input id="app" name="app" type="text" placeholder="Which app is this about?" />
+          </div>
+
+          <div class="field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option value="General Question">General Question</option>
+              <option value="Bug Report">Bug Report</option>
+              <option value="Account Help">Account Help</option>
+              <option value="Feature Request">Feature Request</option>
+              <option value="App Review Support">App Review Support</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+          </div>
+
+          <button class="button primary" type="submit">Send Message</button>
+
+          <div id="form-status" class="status"></div>
+
+          <p class="small">
+            By contacting support, you agree to share the information submitted in this form
+            for customer support purposes only.
+          </p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Quick Links</h2>
+        <p>For the fastest route through the garden gate:</p>
+
+        <div class="support-links">
+          <a class="button secondary" href="mailto:samuelmsky@gmail.com">Email Support</a>
+          <a class="button secondary" href="#faq">View FAQ</a>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <h2 style="font-size: 1.15rem;">Support Email</h2>
+          <p>
+            <a href="mailto:samuelmsky@gmail.com">samuelmsky@gmail.com</a>
+          </p>
+
+          <h2 style="font-size: 1.15rem; margin-top: 20px;">Response Time</h2>
+          <p>We aim to respond within 1 to 3 business days.</p>
+
+          <h2 style="font-size: 1.15rem; margin-top: 20px;">For Apple App Review</h2>
+          <p>
+            This page is the official support destination for Six7 Industries apps and is suitable
+            for use as an App Store Support URL.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="card" style="margin-top: 24px;">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>How do I contact support?</summary>
+          <p>
+            Use the support form above or email
+            <a href="mailto:samuelmsky@gmail.com">samuelmsky@gmail.com</a>.
+          </p>
+        </details>
+
+        <details>
+          <summary>What should I include in a bug report?</summary>
+          <p>
+            Please include the app name, device model, iOS version, what happened,
+            and any steps that help reproduce the issue.
+          </p>
+        </details>
+
+        <details>
+          <summary>How long does it take to get a response?</summary>
+          <p>
+            Most support requests are answered within 1 to 3 business days.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I request a feature?</summary>
+          <p>
+            Yes. Feature requests are welcome. Send your idea through the form and we’ll review it.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Six7 Industries. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("support-form");
+    const statusBox = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      const action = form.getAttribute("action");
+
+      // If no real endpoint is set, use mailto fallback.
+      if (!action || action === "#") {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const app = document.getElementById("app").value.trim();
+        const topic = document.getElementById("topic").value;
+        const message = document.getElementById("message").value.trim();
+
+        const subject = encodeURIComponent(`[Support] ${topic}${app ? " - " + app : ""}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nApp: ${app}\nTopic: ${topic}\n\nMessage:\n${message}`
+        );
+
+        window.location.href = `mailto:samuelmsky@gmail.com?subject=${subject}&body=${body}`;
+
+        statusBox.className = "status success";
+        statusBox.textContent = "Your email app is opening so you can send the message.";
+        return;
+      }
+
+      // If Formspree or another endpoint is set, submit via fetch.
+      e.preventDefault();
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          statusBox.className = "status success";
+          statusBox.textContent = "Message sent successfully. We’ll get back to you soon.";
+        } else {
+          statusBox.className = "status error";
+          statusBox.textContent = "Could not send your message right now. Please email support directly.";
+        }
+      } catch (err) {
+        statusBox.className = "status error";
+        statusBox.textContent = "Network error. Please email support directly.";
+      }
+    });
+  </script>
+</body>
+</html>
